@@ -1,0 +1,25 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("DATABASE_URL")
+}
+
+model Users {
+  id            Int             @id @default(autoincrement())
+  name          String          @db.NVarChar(100)
+  dni           String          @db.NVarChar(100)
+  phone         String          @db.NVarChar(100)
+  city          String          @db.NVarChar(100)
+  province      String          @db.NVarChar(100)
+  UserInterests UserInterests[]
+}
+
+model UserInterests {
+  id            Int             @id @default(autoincrement())
+  title         String          @db.NVarChar(100)
+  userId        Int
+  Users         Users           @relation(fields: [userId], references: [id], onUpdate: NoAction, map: "FK__UserInter__userI__36B12243")
+}
