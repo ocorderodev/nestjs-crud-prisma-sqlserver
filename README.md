@@ -24,7 +24,8 @@ DATABASE_URL="sqlserver://HOST:PORT;database=BD_NEST_TEST;user=MY_USER;password=
 <br><br>
 <p>Note</p>
 
-It is not necessary to create a database, pprisma orm runs it automatically with the command `npx prisma migrate dev --name init`.
+It is not necessary to create a database, pprisma orm runs it automatically with the command 
+<br>`npx prisma migrate dev --name init`.
 <br><br>
 
 ## 3.- Running the app
